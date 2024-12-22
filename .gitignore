@@ -1,0 +1,7 @@
+.idea
+/venv**
+/.idea/
+/dist/
+/build/
+/src/excel_trans.egg-info/
+*.spec
