@@ -19,8 +19,8 @@ python --version
 
 2. 克隆项目
 ```bash
-git clone https://github.com/yourusername/excel-trans.git
-cd excel-trans
+git clone https://github.com/z7ping/ExcelTrans.git
+cd ExcelTrans
 ```
 
 3. 创建虚拟环境
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ## 项目结构
 
 ```
-excel-trans/
+ExcelTrans/
 ├── src/
 │ └── ExcelTrans/
 │ ├── init.py
@@ -138,6 +138,6 @@ python build_exe.py
 
 ## 联系方式
 
-作者 - [@yourusername](https://github.com/yourusername)
+作者 - [@z7ping](https://github.com/z7ping)
 
-项目链接: [https://github.com/yourusername/excel-trans](https://github.com/yourusername/excel-trans)
+项目链接: [https://github.com/z7ping/ExcelTrans](https://github.com/z7ping/ExcelTrans)
