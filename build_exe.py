@@ -7,6 +7,21 @@ def build_exe():
     # 获取当前目录
     current_dir = os.path.dirname(os.path.abspath(__file__))
     
+    # 读取requirements.txt
+    req_file = os.path.join(current_dir, 'requirements.txt')
+    with open(req_file, encoding='utf-8') as f:
+        requirements = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+    
+    # 确保环境正确
+    print("检查环境...")
+    for req in requirements:
+        try:
+            package = req.split('==')[0]  # 处理版本号
+            __import__(package)
+        except ImportError:
+            print(f"安装依赖: {req}")
+            run([sys.executable, '-m', 'pip', 'install', req], check=True)
+    
     # 清理之前的构建文件
     build_dir = os.path.join(current_dir, 'build')
     dist_dir = os.path.join(current_dir, 'dist')
@@ -14,16 +29,6 @@ def build_exe():
         if os.path.exists(dir_path):
             print(f"清理目录: {dir_path}")
             shutil.rmtree(dir_path)
-
-    # 确保环境正确
-    print("检查环境...")
-    requirements = ['pyinstaller', 'pandas', 'openpyxl', 'numpy']
-    for req in requirements:
-        try:
-            __import__(req)
-        except ImportError:
-            print(f"安装依赖: {req}")
-            run([sys.executable, '-m', 'pip', 'install', req], check=True)
 
     print("\n开始打包...")
     main_path = os.path.join(current_dir, 'src', 'ExcelTrans', 'main.py')

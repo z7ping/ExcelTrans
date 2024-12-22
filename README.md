@@ -75,14 +75,14 @@ excel-trans/
 ## 打包发布
 
 1. 安装打包工具
-   ```bash
-   pip install pyinstaller
-   ```
+```bash
+pip install pyinstaller
+```
 
 2. 运行打包脚本
-   ```bash
-   python build_exe.py
-   ```
+```bash
+python build_exe.py
+```
 
 3. 打包完成后，可执行文件位于：
    - `dist/考勤数据处理工具.exe`
@@ -110,19 +110,19 @@ excel-trans/
 ## 常见问题
 
 1. 找不到依赖库
-   ```bash
-   # 重新安装依赖
-   pip install -r requirements.txt
-   ```
+```bash
+# 重新安装依赖
+pip install -r requirements.txt
+```
 
 2. 打包失败
-   ```bash
-   # 确保在虚拟环境中
-   # 清理之前的构建文件
-   rm -rf build dist
-   # 重新运行打包脚本
-   python build_exe.py
-   ```
+```bash
+# 确保在虚拟环境中
+# 清理之前的构建文件
+rm -rf build dist
+# 重新运行打包脚本
+python build_exe.py
+```
 
 ## 贡献指南
 
